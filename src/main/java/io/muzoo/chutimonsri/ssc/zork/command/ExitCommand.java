@@ -4,7 +4,7 @@ import io.muzoo.chutimonsri.ssc.zork.Game;
 
 public class ExitCommand implements  Command{
     @Override
-    public void execute(Game game) {
+    public void execute(Game game, String argument) {
         game.exit();
     }
 }

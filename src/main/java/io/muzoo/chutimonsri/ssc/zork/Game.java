@@ -24,12 +24,12 @@ public class Game {
         while (!isExit() && scanner.hasNextLine()){
             String rawInput = scanner.nextLine();
             System.out.println("You entered string " + rawInput);
-            CommandType commandType = CommandParser.parseCommand(rawInput);
-            Command command = CommandFactory.get(commandType);
+            CommandLine commandLine = CommandParser.parseCommand(rawInput);
+            Command command = CommandFactory.get(commandLine.getCommandType());
             if (command == null) {
                 System.out.println("Try again");
             }else {
-                command.execute(this);
+                command.execute(this, commandLine.getArgument());
             }
 
         }
