@@ -1,5 +1,7 @@
 package io.muzoo.chutimonsri.ssc.zork;
 
+import io.muzoo.chutimonsri.ssc.zork.command.Command;
+import io.muzoo.chutimonsri.ssc.zork.command.CommandFactory;
 import io.muzoo.chutimonsri.ssc.zork.command.ExitCommand;
 
 import java.util.Scanner;
@@ -24,9 +26,13 @@ public class Game {
         while (!isExit() && scanner.hasNextLine()){
             String rawInput = scanner.nextLine();
             System.out.println("You entered string " + rawInput);
-            ExitCommand exitCommand = new ExitCommand();
-            exitCommand.execute(this);
+            Command command = CommandFactory.get(rawInput);
+            if (command == null) {
+                System.out.println("Try again");
+            }else {
+                command.execute(this);
+            }
+
         }
-        scanner.close();
     }
 }
