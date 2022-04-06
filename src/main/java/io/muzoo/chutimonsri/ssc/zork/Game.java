@@ -1,20 +1,31 @@
 package io.muzoo.chutimonsri.ssc.zork;
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
+import io.muzoo.chutimonsri.ssc.zork.command.ExitCommand;
+
 import java.util.Scanner;
 
 public class Game {
+    private boolean exit = false;
+
+    private Scanner scanner = new Scanner(System.in);
+
+    public boolean isExit() {
+        return exit;
+    }
+
+    public void exit() {
+        this.exit = true;
+        scanner.close();
+    }
+
     public void start() {
         System.out.println("Game Started");
-        Scanner scanner = new Scanner(System.in);
 
-        while (scanner.hasNextLine()){
+        while (!isExit() && scanner.hasNextLine()){
             String rawInput = scanner.nextLine();
             System.out.println("You entered string " + rawInput);
-            if ("exist".equalsIgnoreCase(rawInput)){
-                break;
-            }
+            ExitCommand exitCommand = new ExitCommand();
+            exitCommand.execute(this);
         }
         scanner.close();
     }
