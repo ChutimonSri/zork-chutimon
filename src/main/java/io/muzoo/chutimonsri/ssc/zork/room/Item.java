@@ -5,6 +5,11 @@ public class Item {
     private String ItemName;
     private int attack;
 
+    public Item(String itemName, int attack) {
+        ItemName = itemName;
+        this.attack = attack;
+    }
+
     public String getItemName() {
         return ItemName;
     }
