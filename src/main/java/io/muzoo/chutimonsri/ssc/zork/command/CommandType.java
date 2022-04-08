@@ -9,7 +9,9 @@ public enum CommandType {
     DROP(DropCommand.class, "drop"),
     ATTACK(AttackWithCommand.class, "attack"),
     GO(GoCommand.class, "go"),
-    HELP(HelpCommand.class, "help");
+    HELP(HelpCommand.class, "help"),
+    QUIT(QuitCommand.class, "quit"),
+    PLAY(PlayCommand.class, "play");
 
     private  Class<? extends Command> commandClass;
 
