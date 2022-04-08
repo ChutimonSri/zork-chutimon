@@ -30,7 +30,7 @@ public class Monster {
         return currentHP;
     }
 
-    public int getAttack() {
+    public int getAttackPower() {
         return attackPower;
     }
 

@@ -8,11 +8,11 @@ public class Player {
     private boolean isAlive;
     private Item item;
 
-    public Player(int maxHP, int currentHP, int attackPower, boolean isAlive){
-        this.maxHP = 100;
+    public Player(int maxHP, int attackPower, boolean isAlive){
+        this.maxHP = maxHP;
         this.currentHP = this.maxHP;
-        this.attackPower = 10;
-        this.isAlive = true;
+        this.attackPower = attackPower;
+        this.isAlive = isAlive;
     }
 
     // As player moves from room to room, HP will increase

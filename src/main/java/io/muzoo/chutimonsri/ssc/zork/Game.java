@@ -1,10 +1,25 @@
 package io.muzoo.chutimonsri.ssc.zork;
 
 import io.muzoo.chutimonsri.ssc.zork.command.*;
+import io.muzoo.chutimonsri.ssc.zork.room.*;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class Game {
+
+    public Player player = new Player(100,20,true);
+
+
+
+    public Maps map = new Maps();
+    public Item item;
+
+    public Room currentRoom;
+
+
+
+
     private boolean exit = false;
 
     private Scanner scanner = new Scanner(System.in);
@@ -20,6 +35,7 @@ public class Game {
 
     public void start() {
         System.out.println("Game Started");
+        currentRoom=map.getCurrentRoom();
 
         while (!isExit() && scanner.hasNextLine()){
             String rawInput = scanner.nextLine();
