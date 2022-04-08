@@ -72,4 +72,8 @@ public class Player {
     public List<Item> getItemList() {
         return itemList;
     }
+
+    public void removeItem(){
+        this.item = null;
+    }
 }
