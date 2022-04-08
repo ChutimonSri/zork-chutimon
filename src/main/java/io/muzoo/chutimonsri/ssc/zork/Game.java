@@ -10,15 +10,10 @@ public class Game {
 
     public Player player = new Player(100,20,true);
 
-
-
     public Maps map = new Maps();
     public Item item;
 
     public Room currentRoom;
-
-
-
 
     private boolean exit = false;
 
@@ -39,7 +34,7 @@ public class Game {
 
         while (!isExit() && scanner.hasNextLine()){
             String rawInput = scanner.nextLine();
-            System.out.println("You entered string " + rawInput);
+//            System.out.println("You entered string " + rawInput);
             CommandLine commandLine = CommandParser.parseCommand(rawInput);
             Command command = CommandFactory.get(commandLine.getCommandType());
             if (command == null) {
