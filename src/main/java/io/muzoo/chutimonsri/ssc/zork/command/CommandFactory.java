@@ -34,6 +34,7 @@ public class CommandFactory {
         commandMap.put(CommandType.TAKE, new TakeCommand());
         commandMap.put(CommandType.USE, new UseCommand());
         commandMap.put(CommandType.DROP, new DropCommand());
+        commandMap.put(CommandType.ATTACK, new AttackWithCommand());
     }
 
     public static Command get(CommandType commandType) {

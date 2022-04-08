@@ -6,8 +6,10 @@ public class Monster {
     private int currentHP;
     private int attackPower;
     private boolean isAlive;
+    private String monsterName;
 
-    public Monster(int maxHP, int attackPower, boolean isAlive){
+    public Monster(String monsterName, int maxHP, int attackPower, boolean isAlive){
+        this.monsterName=monsterName;
         this.maxHP = maxHP;
         this.currentHP = this.maxHP;
         this.attackPower = attackPower;
@@ -36,5 +38,9 @@ public class Monster {
 
     public boolean isAlive() {
         return isAlive;
+    }
+
+    public String getMonsterName() {
+        return monsterName;
     }
 }

@@ -9,8 +9,8 @@ public class Maps {
     Item sword = new Item("sword", 20);
     Item bazooka = new Item("bazooka", 40);
 
-    Monster jack = new Monster(100,30,true);
-    Monster rose = new Monster(100,25,true);
+    Monster jack = new Monster("Jack",100,30,true);
+    Monster rose = new Monster("Rose",100,25,true);
 
 
     Room kitchen = new Room("kitchen", knife, jack);
