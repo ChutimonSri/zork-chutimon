@@ -1,10 +1,14 @@
 package io.muzoo.chutimonsri.ssc.zork.room;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Room {
 
     private Monster monster;
     private Item item;
     private String roomName;
+    public Map<String,Room> nextRooms=new HashMap<>();
 
     private Room north;
     private Room east;
@@ -74,5 +78,16 @@ public class Room {
 
     public boolean hasMonster(){
         return this.monster != null;
+    }
+
+    public void setNextRooms(Room N, Room E, Room W, Room S){
+        nextRooms.put("north", N);
+        nextRooms.put("east", E);
+        nextRooms.put("west", W);
+        nextRooms.put("south", S);
+    }
+
+    public Room getNextRoom(String direction){
+        return nextRooms.get(direction);
     }
 }
