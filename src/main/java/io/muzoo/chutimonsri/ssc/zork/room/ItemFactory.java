@@ -14,7 +14,4 @@ public class ItemFactory {
         itemList.add(new Item("bazooka", 40));
 
     }
-//        add(new Item("Sniper", 20));
-//        add(new Item("Sword",30));
-//        add(new Item("Katana", 40));
 }
