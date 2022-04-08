@@ -6,6 +6,7 @@ public class Player {
     private int currentHP;
     private int attackPower;
     private boolean isAlive;
+    private Item item;
 
     public Player(int maxHP, int currentHP, int attackPower, boolean isAlive){
         this.maxHP = 100;
@@ -49,5 +50,17 @@ public class Player {
 
     public boolean isAlive() {
         return isAlive;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public boolean hasItem(){
+        return item != null;
     }
 }

@@ -8,6 +8,10 @@ public class CommandFactory {
 
     private static Map<CommandType, Command> commandMap = new HashMap<>();
 
+    public static Map<CommandType, Command> getCommandMap() {
+        return commandMap;
+    }
+
     static {
         for (CommandType commandType: CommandType.values()) {
             Command command = null;
@@ -25,6 +29,8 @@ public class CommandFactory {
             }
 
         }
+        commandMap.put(CommandType.EXIT, new ExitCommand());
+        commandMap.put(CommandType.INFO, new InfoCommand());
     }
 
     public static Command get(CommandType commandType) {
