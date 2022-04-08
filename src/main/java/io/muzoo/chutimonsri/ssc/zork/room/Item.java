@@ -2,19 +2,19 @@ package io.muzoo.chutimonsri.ssc.zork.room;
 
 public class Item {
 
-    private String ItemName;
+    private String itemName;
     private int attackPower;
 
     public Item(String itemName, int attackPower) {
-        ItemName = itemName;
+        this.itemName = itemName;
         this.attackPower = attackPower;
     }
 
     public String getItemName() {
-        return ItemName;
+        return this.itemName;
     }
 
     public int getAttackPower() {
-        return attackPower;
+        return this.attackPower;
     }
 }

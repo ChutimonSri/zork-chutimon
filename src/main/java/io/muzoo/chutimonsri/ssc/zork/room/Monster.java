@@ -7,11 +7,11 @@ public class Monster {
     private int attackPower;
     private boolean isAlive;
 
-    public Monster(int maxHP, int currentHP, int attackPower, boolean isAlive){
-        this.maxHP = 100;
+    public Monster(int maxHP, int attackPower, boolean isAlive){
+        this.maxHP = maxHP;
         this.currentHP = this.maxHP;
-        this.attackPower = 25;
-        this.isAlive = true;
+        this.attackPower = attackPower;
+        this.isAlive = isAlive;
     }
 
     // Monster get attack by player
