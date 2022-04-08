@@ -36,6 +36,9 @@ public class GoCommand implements Command{
                     System.out.println("Item in this room: " + game.currentRoom.getItem().getItemName());
                     game.currentItem.setItemName(game.currentRoom.getItem().getItemName());
                 }
+                if (game.currentRoom.hasMonster()){
+                    System.out.println("This room has monster! "+ "("+game.currentRoom.getMonster().getMonsterName()+")");
+                }
             }else {
                 System.out.println("There is no door in North");
             }
@@ -62,6 +65,9 @@ public class GoCommand implements Command{
                 if (game.currentRoom.hasItem()) {
                     System.out.println("Item in this room: " + game.currentRoom.getItem().getItemName());
                     game.currentItem.setItemName(game.currentRoom.getItem().getItemName());
+                }
+                if (game.currentRoom.hasMonster()){
+                    System.out.println("This room has monster! "+ "("+game.currentRoom.getMonster().getMonsterName()+")");
                 }
             }
             else {
@@ -90,6 +96,9 @@ public class GoCommand implements Command{
                     System.out.println("Item in this room: " + game.currentRoom.getItem().getItemName());
                     game.currentItem.setItemName(game.currentRoom.getItem().getItemName());
                 }
+                if (game.currentRoom.hasMonster()){
+                    System.out.println("This room has monster! "+ "("+game.currentRoom.getMonster().getMonsterName()+")");
+                }
             }
             else {
                 System.out.println("There is no door in West");
@@ -115,6 +124,9 @@ public class GoCommand implements Command{
                 if (game.currentRoom.hasItem()) {
                     System.out.println("Item in this room: " + game.currentRoom.getItem().getItemName());
                     game.currentItem.setItemName(game.currentRoom.getItem().getItemName());
+                }
+                if (game.currentRoom.hasMonster()){
+                    System.out.println("This room has monster! "+ "("+game.currentRoom.getMonster().getMonsterName()+")");
                 }
             }
             else{

@@ -28,11 +28,11 @@ public class InfoCommand implements Command{
         System.out.println("********************");
         System.out.println("Monster's Info");
         System.out.println(" ");
-        System.out.println("Jack: " +  jack.getCurrentHP() + " / " + jack.getMaxHP());
-        System.out.println("Jack: " + jack.getAttackPower());
+        System.out.println("Jack's HP: " +  jack.getCurrentHP() + " / " + jack.getMaxHP());
+        System.out.println("Jack's Attack Power: " + jack.getAttackPower());
         System.out.println("");
-        System.out.println("Rose: " +  rose.getCurrentHP() + " / " + rose.getMaxHP());
-        System.out.println("Rose: " + rose.getAttackPower());
+        System.out.println("Rose's HP: " +  rose.getCurrentHP() + " / " + rose.getMaxHP());
+        System.out.println("Rose's Attack Power: " + rose.getAttackPower());
         System.out.println("********************");
         System.out.println("Room's Info");
         System.out.println("");

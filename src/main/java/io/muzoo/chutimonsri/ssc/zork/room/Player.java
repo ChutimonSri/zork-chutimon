@@ -10,7 +10,7 @@ public class Player {
     private int attackPower;
     private boolean isAlive;
     private Item item;
-    private List<Item> itemList = new ArrayList<>();
+    private List<String> itemList = new ArrayList<>();
 
     public Player(int maxHP, int attackPower, boolean isAlive){
         this.maxHP = maxHP;
@@ -62,14 +62,14 @@ public class Player {
 
     public void setItem(Item item) {
         this.item = item;
-        itemList.add(item);
+        itemList.add(item.toString());
     }
 
     public boolean hasItem(){
         return item != null;
     }
 
-    public List<Item> getItemList() {
+    public List<String> getItemList() {
         return itemList;
     }
 

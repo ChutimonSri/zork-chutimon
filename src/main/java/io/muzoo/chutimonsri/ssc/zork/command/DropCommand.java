@@ -13,9 +13,8 @@ public class DropCommand implements Command{
 
     @Override
     public void execute(Game game, String argument) {
-        Item item = game.player.getItem();
         if (game.player.hasItem()){
-            if (Objects.equals(item.getItemName(), argument)){
+            if (Objects.equals(game.player.getItem().getItemName(), argument)){
                 game.player.removeItem();
                 System.out.println("You have dropped "+argument);
             }
