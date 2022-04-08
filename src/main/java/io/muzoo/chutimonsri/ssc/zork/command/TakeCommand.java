@@ -13,14 +13,13 @@ public class TakeCommand implements Command{
 
     @Override
     public void execute(Game game, String argument) {
-        Item item=game.currentRoom.getItem();
         if (!game.isExit() && (Objects.equals(game.currentRoom.getItem().getItemName(), argument))){
-            game.player.setItem(item);
+            game.player.setItem(game.currentItem);
             game.currentRoom.removeItem();
-            System.out.println("You have taken "+item.getItemName());
+            System.out.println("You have taken "+game.currentItem.getItemName());
         }
         else {
-            System.out.println("The room does not have "+item.getItemName());
+            System.out.println("The room does not have "+game.currentItem.getItemName());
         }
 
     }

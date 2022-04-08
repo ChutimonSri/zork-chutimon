@@ -11,9 +11,10 @@ public class Game {
     public Player player = new Player(100,20,true);
 
     public Maps map = new Maps();
-    public Item item;
 
     public Room currentRoom;
+
+    public Item currentItem;
 
     private boolean exit = false;
 
@@ -31,6 +32,7 @@ public class Game {
     public void start() {
         System.out.println("Game Started");
         currentRoom=map.getCurrentRoom();
+        currentItem=map.getCurrentRoom().getItem();
 
         while (!isExit() && scanner.hasNextLine()){
             String rawInput = scanner.nextLine();

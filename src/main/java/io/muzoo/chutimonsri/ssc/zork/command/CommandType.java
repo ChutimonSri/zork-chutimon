@@ -8,7 +8,8 @@ public enum CommandType {
     USE(UseCommand.class, "use"),
     DROP(DropCommand.class, "drop"),
     ATTACK(AttackWithCommand.class, "attack"),
-    GO(GoCommand.class, "go");
+    GO(GoCommand.class, "go"),
+    HELP(HelpCommand.class, "help");
 
     private  Class<? extends Command> commandClass;
 

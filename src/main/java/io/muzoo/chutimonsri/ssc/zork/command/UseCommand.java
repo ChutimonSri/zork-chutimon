@@ -13,13 +13,12 @@ public class UseCommand implements Command{
 
     @Override
     public void execute(Game game, String argument) {
-        Item item=game.currentRoom.getItem();
-        String itemInCurRoom=item.getItemName();
-        if (!game.isExit() && (!Objects.equals(item.getItemName(), argument))){
+        String itemInCurRoom=game.currentRoom.getItem().getItemName();
+        if (!game.isExit() && (!Objects.equals(game.currentRoom.getItem().getItemName(), argument))){
 
             if ((game.player.getItemList().contains(argument))){
-                game.player.setItem(item.setItemName(argument));
-                System.out.println("Use "+item.setItemName(argument).getItemName()+" !!!");
+                game.player.setItem(game.currentRoom.getItem().setItemName(argument));
+                System.out.println("Use "+game.currentRoom.getItem().setItemName(argument).getItemName()+" !!!");
             }
             else {
                 System.out.println("You do not have "+itemInCurRoom+" in your bag");

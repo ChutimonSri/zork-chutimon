@@ -1,6 +1,7 @@
 package io.muzoo.chutimonsri.ssc.zork.command;
 
 import io.muzoo.chutimonsri.ssc.zork.Game;
+import io.muzoo.chutimonsri.ssc.zork.room.Item;
 import io.muzoo.chutimonsri.ssc.zork.room.Player;
 import io.muzoo.chutimonsri.ssc.zork.room.Room;
 
@@ -12,24 +13,28 @@ public class GoCommand implements Command{
 
     @Override
     public void execute(Game game, String argument) {
-        Room currentRoom = game.currentRoom;
         Player player =game.player;
+
 
         //check North
         if (argument.equalsIgnoreCase("north")) {
-            if (currentRoom.getNorth()!=null){
+            if (game.currentRoom.getNorth()!=null){
                 player.increaseHP();
-                Room nextRoom = currentRoom.getNorth();
-                Room previousRoom = currentRoom;
-                currentRoom = nextRoom;
-                System.out.println("We are at " + currentRoom.getRoomName());
+                Room nextRoom = game.currentRoom.getNorth();
+                Room previousRoom = game.currentRoom;
+                game.currentRoom = nextRoom;
+                System.out.println("We are at " + game.currentRoom.getRoomName());
                 System.out.println(" ");
-                if (currentRoom.getEast()!=null){
+                if (game.currentRoom.getEast()!=null){
                     System.out.println("You can go East");
-                }if (currentRoom.getWest()!=null){
+                }if (game.currentRoom.getWest()!=null){
                     System.out.println("You can go West");
-                }if (currentRoom.getSouth()!=null) {
+                }if (game.currentRoom.getSouth()!=null) {
                     System.out.println("You can go South");
+                }
+                if (game.currentRoom.hasItem()) {
+                    System.out.println("Item in this room: " + game.currentRoom.getItem().getItemName());
+                    game.currentItem.setItemName(game.currentRoom.getItem().getItemName());
                 }
             }else {
                 System.out.println("There is no door in North");
@@ -40,19 +45,23 @@ public class GoCommand implements Command{
 
         //check East
         if (argument.equalsIgnoreCase("east")){
-            if (currentRoom.getEast()!=null){
+            if (game.currentRoom.getEast()!=null){
                 player.increaseHP();
-                Room nextRoom = currentRoom.getEast();
-                Room previousRoom = currentRoom;
-                currentRoom = nextRoom;
-                System.out.println("We are at " + currentRoom.getRoomName());
+                Room nextRoom = game.currentRoom.getEast();
+                Room previousRoom = game.currentRoom;
+                game.currentRoom = nextRoom;
+                System.out.println("We are at " + game.currentRoom.getRoomName());
                 System.out.println(" ");
-                if (currentRoom.getNorth()!=null){
+                if (game.currentRoom.getNorth()!=null){
                     System.out.println("You can go North");
-                }if (currentRoom.getWest()!=null){
+                }if (game.currentRoom.getWest()!=null){
                     System.out.println("You can go West");
-                }if (currentRoom.getSouth()!=null) {
+                }if (game.currentRoom.getSouth()!=null) {
                     System.out.println("You can go South");
+                }
+                if (game.currentRoom.hasItem()) {
+                    System.out.println("Item in this room: " + game.currentRoom.getItem().getItemName());
+                    game.currentItem.setItemName(game.currentRoom.getItem().getItemName());
                 }
             }
             else {
@@ -63,19 +72,23 @@ public class GoCommand implements Command{
 
         //check West
         if (argument.equalsIgnoreCase("west")){
-            if (currentRoom.getWest()!=null){
+            if (game.currentRoom.getWest()!=null){
                 player.increaseHP();
-                Room nextRoom = currentRoom.getWest();
-                Room previousRoom = currentRoom;
-                currentRoom = nextRoom;
-                System.out.println("We are at " + currentRoom.getRoomName());
+                Room nextRoom = game.currentRoom.getWest();
+                Room previousRoom = game.currentRoom;
+                game.currentRoom = nextRoom;
+                System.out.println("We are at " + game.currentRoom.getRoomName());
                 System.out.println(" ");
-                if (currentRoom.getEast()!=null){
+                if (game.currentRoom.getEast()!=null){
                     System.out.println("You can go East");
-                }if (currentRoom.getNorth()!=null){
+                }if (game.currentRoom.getNorth()!=null){
                     System.out.println("You can go North");
-                }if (currentRoom.getSouth()!=null) {
+                }if (game.currentRoom.getSouth()!=null) {
                     System.out.println("You can go South");
+                }
+                if (game.currentRoom.hasItem()) {
+                    System.out.println("Item in this room: " + game.currentRoom.getItem().getItemName());
+                    game.currentItem.setItemName(game.currentRoom.getItem().getItemName());
                 }
             }
             else {
@@ -85,19 +98,23 @@ public class GoCommand implements Command{
 
         //check South
         if (argument.equalsIgnoreCase("south")){
-            if (currentRoom.getSouth()!=null){
+            if (game.currentRoom.getSouth()!=null){
                 player.increaseHP();
-                Room nextRoom = currentRoom.getSouth();
-                Room previousRoom = currentRoom;
-                currentRoom = nextRoom;
-                System.out.println("We are at " + currentRoom.getRoomName());
+                Room nextRoom = game.currentRoom.getSouth();
+                Room previousRoom = game.currentRoom;
+                game.currentRoom = nextRoom;
+                System.out.println("We are at " + game.currentRoom.getRoomName());
                 System.out.println(" ");
-                if (currentRoom.getEast()!=null){
+                if (game.currentRoom.getEast()!=null){
                     System.out.println("You can go East");
-                }if (currentRoom.getWest()!=null){
+                }if (game.currentRoom.getWest()!=null){
                     System.out.println("You can go West");
-                }if (currentRoom.getNorth()!=null) {
+                }if (game.currentRoom.getNorth()!=null) {
                     System.out.println("You can go North");
+                }
+                if (game.currentRoom.hasItem()) {
+                    System.out.println("Item in this room: " + game.currentRoom.getItem().getItemName());
+                    game.currentItem.setItemName(game.currentRoom.getItem().getItemName());
                 }
             }
             else{
