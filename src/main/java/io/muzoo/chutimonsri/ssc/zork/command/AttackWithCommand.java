@@ -12,32 +12,30 @@ public class AttackWithCommand implements Command {
 
     @Override
     public void execute(Game game, String argument) {
-        Monster monster = game.currentRoom.getMonster();
-        Player player = game.player;
         if (game.currentRoom.hasMonster()){
-            if (monster.isAlive()){
-                if (monster.isAlive()){
-                    if (player.hasItem()){
-                        monster.getAttack(player.getAttackPower()+game.player.getItem().getAttackPower());
-                        if (monster.getCurrentHP()>0){
-                            System.out.println("Monster's HP: "+ monster.getCurrentHP() +" / "+monster.getMaxHP());
+            if (game.currentRoom.getMonster().isAlive()){
+                if (game.currentRoom.getMonster().isAlive()){
+                    if (game.player.hasItem()){
+                        game.currentRoom.getMonster().getAttack(game.player.getAttackPower()+game.player.getItem().getAttackPower());
+                        if (game.currentRoom.getMonster().getCurrentHP()>0){
+                            System.out.println("Monster's HP: "+ game.currentRoom.getMonster().getCurrentHP() +" / "+game.currentRoom.getMonster().getMaxHP());
+                            if (game.currentRoom.getMonster().getAttackPower()!=0){
+                                int attackPower=game.currentRoom.getMonster().getAttackPower();
+                                game.player.getAttack(attackPower);
+                                if (game.player.getCurrentHP()>0){
+                                    System.out.println("Current player's HP: "+ game.player.getCurrentHP() +" / "+game.player.getMaxHP());
+                                }
+                                else {
+                                    System.out.println("Monster killed you");
+                                    game.exit();
+                                }
+                            }
                         }
                         else {
                             System.out.println("You have killed Monster");
                             game.exit();
                         }
-                        if (monster.getAttackPower()!=0){
-                            int attackPower=monster.getAttackPower();
-                            player.getAttack(attackPower);
-                            if (player.getCurrentHP()>0){
-                                System.out.println("Current player's HP: "+ player.getCurrentHP() +" / "+player.getMaxHP());
-                            }
-                            else {
-                                System.out.println("Monster killed you");
-                                game.exit();
-                            }
 
-                        }
                     }
                 }
             }

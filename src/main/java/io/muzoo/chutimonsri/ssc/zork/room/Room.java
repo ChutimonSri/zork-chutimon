@@ -56,21 +56,10 @@ public class Room {
         return south;
     }
 
-    public void setMonster(Monster monster) {
-        this.monster = monster;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
     public void removeItem(){
         this.item = null;
     }
 
-    public void removeMonster(){
-        this.monster = null;
-    }
 
     public boolean hasItem(){
         return this.item != null;
@@ -80,14 +69,4 @@ public class Room {
         return this.monster != null;
     }
 
-    public void setNextRooms(Room N, Room E, Room W, Room S){
-        nextRooms.put("north", N);
-        nextRooms.put("east", E);
-        nextRooms.put("west", W);
-        nextRooms.put("south", S);
-    }
-
-    public Room getNextRoom(String direction){
-        return nextRooms.get(direction);
-    }
 }

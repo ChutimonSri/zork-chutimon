@@ -52,10 +52,6 @@ public class Player {
         return attackPower;
     }
 
-    public boolean isAlive() {
-        return isAlive;
-    }
-
     public Item getItem() {
         return item;
     }

@@ -14,8 +14,6 @@ public class GoCommand implements Command{
     @Override
     public void execute(Game game, String argument) {
         Player player =game.player;
-
-
         //check North
         if (argument.equalsIgnoreCase("north")) {
             if (game.currentRoom.getNorth()!=null){
