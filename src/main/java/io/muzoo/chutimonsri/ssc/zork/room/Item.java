@@ -10,6 +10,11 @@ public class Item {
         this.attackPower = attackPower;
     }
 
+    public Item setItemName(String itemName) {
+        this.itemName = itemName;
+        return null;
+    }
+
     public String getItemName() {
         return this.itemName;
     }

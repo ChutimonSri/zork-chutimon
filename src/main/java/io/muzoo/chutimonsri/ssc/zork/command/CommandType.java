@@ -4,7 +4,8 @@ package io.muzoo.chutimonsri.ssc.zork.command;
 public enum CommandType {
     INFO(InfoCommand.class, "info"),
     EXIT(ExitCommand.class, "exit"),
-    TAKE(TakeCommand.class, "take");
+    TAKE(TakeCommand.class, "take"),
+    USE(UseCommand.class, "use");
 
     private  Class<? extends Command> commandClass;
 
